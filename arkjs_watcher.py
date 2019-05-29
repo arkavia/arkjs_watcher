@@ -25,7 +25,6 @@ import cli_ui
 from termcolor import cprint 
 from pyfiglet import figlet_format
 
- 
 
 # VARIABLES GLOBALES
 cprint(figlet_format('arkjs',font='larry3d'),"blue",attrs=["bold"])
@@ -55,14 +54,9 @@ vt_sleep_scan_report = config['DEV']['vt_sleep_scan_report']
 # DEFINICION DE ARGUMENTOS DE SCRIPT #
 parser = argparse.ArgumentParser()
 parser.add_argument('-u', '--url', action='store', dest='url', help='URL a analizar')
-parser.add_argument('-s', '--send', action='store', dest='send', help='Enviar a analizar archivos')
 parser.add_argument('-v','--version', action='version', version='%(prog)s 1.0.0')
 results = parser.parse_args()
 
-
-
- 
- 
 
 def vTotalQuery(sha256):
     params = {"apikey": vt_apikey, "resource": str(sha256)}
